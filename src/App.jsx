@@ -8,8 +8,13 @@ function App() {
   const handleButtonClick = (value) => {
     if (value === "=") {
       try {
-        const result = eval(input);
-        setOutput(result);
+        if(input.length === 0) {
+          setOutput("Error");
+        }
+        else {
+          const result = eval(input);
+          setOutput(result);
+        }
       } catch (error) {
         setOutput("Error");
       }
